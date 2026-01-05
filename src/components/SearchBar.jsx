@@ -1,6 +1,11 @@
-// PROPS: onSearch function from App
-// Has input field and button
-// When clicked, calls onSearch(cityName)
+/**
+ * SearchBar Component
+ *
+ * Controlled input that allows users to search for cities.
+ * Validates input  and triggers search on submit.
+ *
+ * @param {Function} onSearch - Function called with city upon submit
+ */
 import { useState } from "react";
 
 function SearchBar({ onSearch }) {

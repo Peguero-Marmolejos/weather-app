@@ -1,5 +1,11 @@
-// PROPS: weather data from App
-// Displays: city, temp, description, icon
+/**
+ * CurrentWeather component
+ *
+ * Displays the current weather conditions from searched city
+ *
+ * @param {Object} weather - Weather data object from OpenWeather API
+ */
+
 function CurrentWeather({ weather }) {
 	const city = weather.name;
 	const temperature = weather.main.temp;

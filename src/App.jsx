@@ -6,6 +6,13 @@ import Forecast from "./components/Forecast";
 import LoadingSpinner from "./components/LoadingSpinner";
 import ErrorMessage from "./components/ErrorMessage";
 
+/**
+ * App Component
+ *
+ * Main application component that manages weather data fetching and display.
+ * Handles search input, loading states, error handling, and coordinates between weather components
+ */
+
 function App() {
 	const apikey = import.meta.env.VITE_API_KEY;
 
@@ -18,17 +25,20 @@ function App() {
 	const clearError = () => setErrorState("");
 
 	const handleSearch = (city) => {
+		//Error Handling for empty string
 		if (!city.trim()) {
 			setErrorState(
 				"We need SOMETHING! Please try entering a city name again ;)"
 			);
 			return;
 		}
-		clearError;
+		clearError();
+		//Set loading state to true before updating city, to avoid race conditions
 		setLoadingState(true);
 		setCity(city);
 	};
 
+	//Function that fetches both current weather data and forecast data in parallel
 	const fetchWeatherData = (city) => {
 		const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=imperial`;
 		const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apikey}&units=imperial`;
@@ -38,6 +48,7 @@ function App() {
 
 		Promise.all([currentPromise, forecastPromise])
 			.then(([currentData, forecastData]) => {
+				//Error handling for an unknown city or a city not found in the API
 				if (currentData.cod === "404" || forecastData.cod === "404") {
 					setErrorState("HUH? Never heard of it. Try again!");
 					setLoadingState(false);
@@ -45,6 +56,7 @@ function App() {
 				}
 				clearError();
 				setWeatherData(currentData);
+				//Filtering through noon forecast to display one forecast per day
 				setForecastData(
 					forecastData.list.filter((item) => item.dt_txt.includes("12:00:00"))
 				);

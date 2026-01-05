@@ -1,3 +1,10 @@
+/**
+ * LoadingSpinner Component
+ *
+ * Displays full-screen loading overlay with animated texts and spinner.
+ * Shown while weather data is being fetched from API
+ *
+ */
 function LoadingSpinner() {
 	const message = ["L", "O", "A", "D", "I", "N", "G", ".", ".", ".", ".", "."];
 	const animate = message.map((letter, index) => {

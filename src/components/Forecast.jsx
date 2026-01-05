@@ -1,6 +1,11 @@
-// PROPS: forecast data from App
-// Maps through forecast array
-// Shows cards for each day
+/**
+ * Forecast component
+ *
+ * Displays a 5-day forecast, using the 12:00:00 forecast for each day, using fetched data from an API call
+ *
+ * @param {Array} forecast - Array of forecast objects filtered for noon times from OpenWeather API
+ */
+
 function Forecast({ forecast }) {
 	return (
 		<div className="weather-card d-flex flex-wrap justify-content-center p-3 gap-3">
