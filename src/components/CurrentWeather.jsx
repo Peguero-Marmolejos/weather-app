@@ -7,8 +7,8 @@ function CurrentWeather({ weather }) {
 	const icon = weather.weather[0].icon;
 
 	return (
-		<div className="card shadow rounded p-4 text-center m-auto w-max">
-			<h1 className="text-center text-primary">{city}</h1>
+		<div className=" weather-card p-4 text-center m-auto w-max">
+			<h1 className="text-center">{city}</h1>
 			<div className="d-flex justify-content-center align-items-center gap-3">
 				<h3 className="temp-display">{temperature}°F</h3>
 				<img

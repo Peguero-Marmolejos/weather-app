@@ -5,6 +5,23 @@
 	text-align: center;
 }
 
+body {
+	background-color: rgba(101, 67, 33, 1);
+}
+
+.weather-card {
+	background-color: rgba(140, 110, 82, 1);
+	color: rgb(245, 245, 220);
+}
+
+.forecast-card {
+	background-color: rgba(101, 67, 33, 1);
+	color: rgb(245, 245, 220);
+	flex: 1 1 180;
+	max-width: 220px;
+	min-width: 150px;
+}
+
 .loading-spinner-overlay {
 	position: fixed;
 	top: 0;
