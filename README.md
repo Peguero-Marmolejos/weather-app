@@ -1,5 +1,9 @@
 # Weather App
 
+## Live Demo
+
+\*\*[View Live App](https://weather-app-blush-psi-22.vercel.app/)
+
 ## Description
 
 React weather app that allows users to search through the OpenWeathermap API to retrieve current weather of a known city, as well as display the next 5 day forecast.
@@ -64,7 +68,13 @@ React weather app that allows users to search through the OpenWeathermap API to 
 
 ## Screenshots
 
-_SCREEN SHOTS WILL BE ADDED AFTER DEPLOYMENT_
+## Desktop View
+
+![Weather App Desktop View](/screenshots/desktop-view.PNG)
+
+## Mobile View
+
+![Weather App Mobile View](/screenshots/mobile-view.PNG)
 
 ## Future Improvements
 
